@@ -1,4 +1,7 @@
 <?php
+// set default timezone
+date_default_timezone_set('Europe/Oslo');
+
 // require composer
 require '../vendor/autoload.php';
 
@@ -16,18 +19,6 @@ require ($devMode) ? 'appDevConfig.php' : 'appLiveConfig.php';
 
 // begin application
 $app = new \Slim\App($config);
-
-// boot database ORM
-$container = $app->getContainer();
-$capsule = new \Illuminate\Database\Capsule\Manager;
-$capsule->addConnection($container['settings']['db']);
-$capsule->setAsGlobal();
-$capsule->bootEloquent();
-
-$container['db'] = function ($container) use ($capsule) {
-  return $capsule;
-};
-
 
 // application middleware
 require 'middleware/autoload.php';

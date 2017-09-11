@@ -10,5 +10,5 @@ $config['settings']['db'] = [
   'collation' => 'utf8mb4_unicode_ci',
   'prefix' => ''
 ];
-$config['settings']['jwtSecret'] = '';
+$config['settings']['jwtSecret'] = 'akjdhajksdhauedyaskjdyaskjdyasdkjasydkausyakjsdyakxxabasmnd';
 $config['settings']['encryptionKey'] = '';

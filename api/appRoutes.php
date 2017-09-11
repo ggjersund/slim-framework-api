@@ -1,12 +1,7 @@
 <?php
-use \Psr\Http\Message\ServerRequestInterface as Request;
-use \Psr\Http\Message\ResponseInterface as Response;
+require_once "classes/JWTManager.php";
+require_once "controllers/account/AccountPingController.php";
+require_once "controllers/account/AccountSignInController.php";
 
-$app->get('/hello/{name}', function (Request $request, Response $response) {
-    $uri = $request->getUri();
-    $data = [
-      'href' => $uri->getBaseUrl().$uri->getPath(),
-      'user' => $this->db->table('users')->find(1)
-    ];
-    return $response->withJson($data);
-});
+$app->get('/account/ping', 'AccountPingController')->add($jwtMiddleware);
+$app->get('/account/sign-in', 'AccountSignInController');
