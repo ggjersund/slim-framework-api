@@ -10,6 +10,7 @@ return array(
     'Symfony\\Component\\Translation\\' => array($vendorDir . '/symfony/translation'),
     'Slim\\Middleware\\' => array($vendorDir . '/tuupola/slim-jwt-auth/src'),
     'Slim\\' => array($vendorDir . '/slim/slim/Slim'),
+    'Respect\\Validation\\' => array($vendorDir . '/respect/validation/library'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
     'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-message/src'),
     'Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
@@ -20,5 +21,6 @@ return array(
     'Illuminate\\Container\\' => array($vendorDir . '/illuminate/container'),
     'Firebase\\JWT\\' => array($vendorDir . '/firebase/php-jwt/src'),
     'FastRoute\\' => array($vendorDir . '/nikic/fast-route/src'),
+    'DavidePastore\\Slim\\Validation\\' => array($vendorDir . '/davidepastore/slim-validation/src'),
     'Carbon\\' => array($vendorDir . '/nesbot/carbon/src/Carbon'),
 );

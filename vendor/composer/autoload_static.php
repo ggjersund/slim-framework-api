@@ -8,8 +8,8 @@ class ComposerStaticInit0e107b148335d6fe6660324d8b77a72e
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
-        '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
         '253c157292f75eb38082b5acb06f3f01' => __DIR__ . '/..' . '/nikic/fast-route/src/functions.php',
+        '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
         '72579e7bd17821bb1321b87411366eae' => __DIR__ . '/..' . '/illuminate/support/helpers.php',
     );
 
@@ -20,6 +20,10 @@ class ComposerStaticInit0e107b148335d6fe6660324d8b77a72e
             'Symfony\\Component\\Translation\\' => 30,
             'Slim\\Middleware\\' => 16,
             'Slim\\' => 5,
+        ),
+        'R' => 
+        array (
+            'Respect\\Validation\\' => 19,
         ),
         'P' => 
         array (
@@ -39,6 +43,10 @@ class ComposerStaticInit0e107b148335d6fe6660324d8b77a72e
         array (
             'Firebase\\JWT\\' => 13,
             'FastRoute\\' => 10,
+        ),
+        'D' => 
+        array (
+            'DavidePastore\\Slim\\Validation\\' => 30,
         ),
         'C' => 
         array (
@@ -62,6 +70,10 @@ class ComposerStaticInit0e107b148335d6fe6660324d8b77a72e
         'Slim\\' => 
         array (
             0 => __DIR__ . '/..' . '/slim/slim/Slim',
+        ),
+        'Respect\\Validation\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/respect/validation/library',
         ),
         'Psr\\Log\\' => 
         array (
@@ -102,6 +114,10 @@ class ComposerStaticInit0e107b148335d6fe6660324d8b77a72e
         'FastRoute\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/fast-route/src',
+        ),
+        'DavidePastore\\Slim\\Validation\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/davidepastore/slim-validation/src',
         ),
         'Carbon\\' => 
         array (

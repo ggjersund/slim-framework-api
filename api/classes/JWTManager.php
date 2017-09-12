@@ -9,13 +9,15 @@ class JWTManager {
   public function __construct ($jwtSecret) {
     $this->jwtSecret = $jwtSecret;
   }
-  public function create ($issuer, $user, $expire) {
+  public function create ($issuer, $token, $user, $expire, $remember) {
     // create JWT
     $payload = [
     "iss" => $issuer,
     "iat" => time(),
-    "identifier" => $user,
-    "exp" => $expire
+    "exp" => $expire,
+    "rem" => ($remember) ? 1 : 0,
+    "tok" => $token,
+    "uid" => $user
     ];
     $jwt = JWT::encode($payload, $this->jwtSecret);
 
