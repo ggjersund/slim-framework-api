@@ -8,11 +8,8 @@ require '../vendor/autoload.php';
 // enable developement environment
 $devMode = true;
 
-// Create config variable
-$config = [];
-
 // application configuration (no secret configs here)
-require 'appConfig.php';
+require 'appBaseConfig.php';
 
 // secret configuration (dev or live)
 require ($devMode) ? 'appDevConfig.php' : 'appLiveConfig.php';
@@ -20,8 +17,19 @@ require ($devMode) ? 'appDevConfig.php' : 'appLiveConfig.php';
 // begin application
 $app = new \Slim\App($config);
 
-// application middleware
-require 'middleware/autoload.php';
+// boot Eloquent
+$container = $app->getContainer();
+$capsule = new \Illuminate\Database\Capsule\Manager;
+$capsule->addConnection($container['settings']['db']);
+$capsule->setAsGlobal();
+$capsule->bootEloquent();
+
+// set container values
+$container['db'] = function ($container) use ($capsule) { return $capsule; };
+$container["jwt"] = function ($container) { return new StdClass; };
+
+// middleware
+$app->add('\Api\Middleware\CORS');
 
 // routes
 require 'appRoutes.php';

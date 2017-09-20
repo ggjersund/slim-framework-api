@@ -1,8 +1,11 @@
 <?php
+namespace Api\Controller\Account;
+
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 use \Interop\Container\ContainerInterface as ContainerInterface;
 use \Respect\Validation\Validator as v;
+use \Api\Classes\JWTManager as JWTManager;
 
 class AccountSignInController {
   protected $container;
@@ -15,8 +18,8 @@ class AccountSignInController {
   // data input validation
   public function validation () {
     return new \DavidePastore\Slim\Validation\Validation([
-        'username' => v::alnum()->noWhitespace()->length(1, 10),
-        'age' => v::numeric()->positive()->between(1, 20)
+    #    'username' => v::alnum()->noWhitespace()->length(1, 10),
+    #    'age' => v::numeric()->positive()->between(1, 20)
     ]);
   }
 

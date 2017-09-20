@@ -1,7 +1,5 @@
 <?php
-require_once "classes/JWTManager.php";
-require_once "controllers/account/AccountPingController.php";
-require_once "controllers/account/AccountSignInController.php";
-
-$app->get('/account/ping', 'AccountPingController')->add($jwtMiddleware);
-$app->get('/account/sign-in', 'AccountSignInController')->add(AccountSignInController::validation());
+$app->get('/account/ping', '\Api\Controller\Account\AccountPingController')
+          ->add('\Api\Middleware\JWT');
+$app->get('/account/sign-in', '\Api\Controller\Account\AccountSignInController')
+          ->add(\Api\Controller\Account\AccountSignInController::validation());

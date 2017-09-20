@@ -1,9 +1,12 @@
 <?php
+namespace Api\Controller\Account;
+
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 use \Interop\Container\ContainerInterface as ContainerInterface;
 use \Firebase\JWT\JWT as JWT;
 use \Respect\Validation\Validator as v;
+use \Api\Classes\JWTManager as JWTManager;
 
 class AccountPingController {
   protected $container;

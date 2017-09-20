@@ -23,4 +23,8 @@ return array(
     'FastRoute\\' => array($vendorDir . '/nikic/fast-route/src'),
     'DavidePastore\\Slim\\Validation\\' => array($vendorDir . '/davidepastore/slim-validation/src'),
     'Carbon\\' => array($vendorDir . '/nesbot/carbon/src/Carbon'),
+    'Api\\Model\\' => array($baseDir . '/api/models'),
+    'Api\\Middleware\\' => array($baseDir . '/api/middleware'),
+    'Api\\Controller\\' => array($baseDir . '/api/controllers'),
+    'Api\\Classes\\' => array($baseDir . '/api/classes'),
 );

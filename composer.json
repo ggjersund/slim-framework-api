@@ -5,5 +5,13 @@
         "tuupola/slim-jwt-auth": "^2.3",
         "davidepastore/slim-validation": "^0.5.0",
         "respect/validation": "^1.1"
+    },
+    "autoload": {
+      "psr-4": {
+          "Api\\Middleware\\": "api/middleware",
+          "Api\\Classes\\": "api/classes",
+          "Api\\Controller\\": "api/controllers",
+          "Api\\Model\\": "api/models"
+      }
     }
 }

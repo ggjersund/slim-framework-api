@@ -1,5 +1,6 @@
 <?php
-// Required dependency
+namespace Api\Classes;
+
 use \Firebase\JWT\JWT as JWT;
 
 // JWT manager for creating and refreshing JWT tokens
