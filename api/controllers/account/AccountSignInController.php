@@ -45,7 +45,7 @@ class AccountSignInController {
       # Else -> Return error
 
       $jwtManager = new JWTManager($this->container->get('settings')['jwtSecret']);
-      $jwt = $jwtManager->create($uri->getBaseUrl(), 2124, 2, time() + 60, true);
+      $jwt = $jwtManager->create($uri->getBaseUrl(), 2124, 2, time() + (60*60*60), true);
       $data['token'] = $jwt;
       $data['message'] = 'Success';
       $data['developer'] = 'User is signed in';

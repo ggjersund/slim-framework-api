@@ -12,29 +12,28 @@ class AccountPingController {
   protected $container;
 
   // construct container
-  public function __construct(ContainerInterface $container) {
+  public function __construct($container) {
      $this->container = $container;
-  }
-
-  // data input validation
-  public function validation () {
-    return new \DavidePastore\Slim\Validation\Validation([
-        'username' => v::alnum()->noWhitespace()->length(1, 10),
-        'age' => v::numeric()->positive()->between(1, 20)
-    ]);
   }
 
   // route response
   public function __invoke(Request $request, Response $response) {
-    if($request->getAttribute('has_errors')){
+    // initiate basic data variables
+    $uri = $request->getUri();
+    $data = [];
+
+    // error authenticating
+    if ($request->getAttribute('has_errors')) {
+
       $errors = $request->getAttribute('errors');
       return $response->withJson($errors);
+
     } else {
+
       // decode JWT
       $payload = $this->container->get("jwt");
 
       // refresh JWT
-      $uri = $request->getUri();
       $jwtManager = new JWTManager($this->container->get('settings')['jwtSecret']);
       $jwt = $jwtManager->refresh($payload, time() + 60);
 
@@ -43,15 +42,13 @@ class AccountPingController {
         'href' => $uri->getBaseUrl().$uri->getPath(),
         'timestamp' => time(),
         'status' => $response->getStatusCode(),
-        'message' => '',
-        'developer' => '',
-        'token' => $jwt,
-        'data' => []
+        'message' => 'Authentication token found',
+        'developer' => 'Valid authentication token found in bearer',
+        'token' => $jwt
       ];
 
+      // respond
       return $response->withJson($data);
-    }
+    };
   }
-
 };
-?>

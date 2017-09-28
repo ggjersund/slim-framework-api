@@ -26,8 +26,8 @@ class JWTManager {
   }
   public function refresh ($payload, $expire) {
     // refresh JWT
-    $payload["iat"] = time();
-    $payload["exp"] = $expire;
+    $payload->iat = time();
+    $payload->exp = $expire;
     $jwt = JWT::encode($payload, $this->jwtSecret);
 
     return $jwt;
