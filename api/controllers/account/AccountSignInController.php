@@ -18,14 +18,14 @@ class AccountSignInController {
   // data input validation
   public function validation () {
     return new \DavidePastore\Slim\Validation\Validation([
-    #    'username' => v::alnum()->noWhitespace()->length(1, 10),
-    #    'age' => v::numeric()->positive()->between(1, 20)
+      'email' => v::email(),
+      'password' => v::stringType()->length(8, 30, true),
+      'remember' => v::boolType()
     ]);
   }
 
   // route response
   public function __invoke(Request $request, Response $response) {
-
     // initiate basic data variables
     $uri = $request->getUri();
     $data = [];
@@ -38,7 +38,7 @@ class AccountSignInController {
       $data['developer'] = 'Invalid input, see data for further information';
       $response = $response->withStatus(400);
     } else {
-
+      $data['test'] = $request->getParam('email');
       # Check input
       # Check bruteforce
       # If ok -> Sign in
