@@ -1,6 +1,6 @@
-# RESTful API for Project Management
+# API test based on Slim Framework
 
-A RESTful based project managment API for Opplevelse AS.
+A RESTful API based on the Slim framework.
 
 ## Getting Started
 
@@ -28,7 +28,7 @@ Install using Git to clone the entire project folder. Mailing service might requ
 
 ## Authors
 
-* **Gjert Ingar Gjersund** - *Development and design, structural and application programming* - [gjersundgjert@protonmail.com](gjersundgjert@protonmail.com)
+* **Gjert Ingar Gjersund**
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
